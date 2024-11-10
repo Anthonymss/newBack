@@ -185,7 +185,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/alertas/crear?grupoId=1&usuarioId=1&tipo=Robo&descripcion=Alerta%20de%20robo%20en%20el%20vecindario",
+					"raw": "http://localhost:8080/api/alertas/crear?grupoId=1&usuarioId=1&ubicacion=googlre.com&descripcion=Alerta%20de%20robo%20en%20el%20vecindario",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -206,8 +206,8 @@
 							"value": "1"
 						},
 						{
-							"key": "tipo",
-							"value": "Robo"
+							"key": "ubicacion",
+							"value": "googlre.com"
 						},
 						{
 							"key": "descripcion",
@@ -318,6 +318,44 @@
 						}
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "agregar contacto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"maria juana\",\r\n  \"telefono\": \"1244344321\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/contactos-emergencia/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"contactos-emergencia",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar CONTACTO",
+			"request": {
+				"method": "GET",
+				"header": []
 			},
 			"response": []
 		}
