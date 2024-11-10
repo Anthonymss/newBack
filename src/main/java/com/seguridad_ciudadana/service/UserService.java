@@ -17,6 +17,7 @@ public class UserService {
     private final UserRepository userRepository;
     private final GrupoVecinosRepository grupoVecinosRepository;
     public void createUser(UserDto usuarioDto) {
+        Optional<GrupoVecinos> grupoVecinosOpt = grupoVecinosRepository.findById(1L);
             Usuario usuario = Usuario.builder()
                     .apellido(usuarioDto.getApellido())
                     .nombre(usuarioDto.getNombre())
@@ -24,6 +25,7 @@ public class UserService {
                     .contrasena(usuarioDto.getContrasena())
                     .telefono(usuarioDto.getTelefono())
                     .direccion(usuarioDto.getDireccion())
+                    .grupoVecinos(grupoVecinosOpt.get())
                     .build();
 
             userRepository.save(usuario);
