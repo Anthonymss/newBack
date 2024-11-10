@@ -11,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/contactos-emergencia")
 @RequiredArgsConstructor
+@CrossOrigin("*")
 public class ContactoEmergenciaController {
 
     private final ContactoEmergenciaService contactoEmergenciaService;

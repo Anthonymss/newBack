@@ -12,6 +12,8 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/grupo")
+@CrossOrigin("*")
+
 public class GrupoVecinosController {
 
     private final GrupoVecinosService grupoVecinosService;
