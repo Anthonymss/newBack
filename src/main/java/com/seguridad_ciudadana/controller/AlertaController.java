@@ -6,6 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 @RestController
 @RequestMapping("/api/alertas")
@@ -16,10 +18,16 @@ public class AlertaController {
     private final AlertaService alertaService;
 
     @PostMapping("/crear")
-    public ResponseEntity<String> crearAlerta(@RequestParam Long grupoId, @RequestParam Long usuarioId,
-                                                 @RequestParam String ubicacion, @RequestParam String descripcion) {
+    public ResponseEntity<String> crearAlerta(
+            @RequestParam Long grupoId,
+            @RequestParam Long usuarioId,
+            @RequestParam String ubicacion,
+            @RequestParam String descripcion) {
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(alertaService.crearAlerta(grupoId, usuarioId, ubicacion, descripcion));
+        String decodedUbicacion = URLDecoder.decode(ubicacion, StandardCharsets.UTF_8);
+
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(alertaService.crearAlerta(grupoId, usuarioId, decodedUbicacion, descripcion));
     }
 
     @GetMapping("/grupo/{grupoId}")

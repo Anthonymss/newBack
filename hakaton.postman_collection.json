@@ -296,7 +296,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/grupo/agregar-miembro?idUser=1&idGrupo=6",
+					"raw": "http://localhost:8080/api/grupo/agregar-miembro?idUser=6&idGrupo=1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -310,11 +310,11 @@
 					"query": [
 						{
 							"key": "idUser",
-							"value": "1"
+							"value": "6"
 						},
 						{
 							"key": "idGrupo",
-							"value": "6"
+							"value": "1"
 						}
 					]
 				}
@@ -336,12 +336,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/contactos-emergencia/1",
-					"protocol": "http",
+					"raw": "https://newback-sr47.onrender.com/api/contactos-emergencia/1",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"newback-sr47",
+						"onrender",
+						"com"
 					],
-					"port": "8080",
 					"path": [
 						"api",
 						"contactos-emergencia",
@@ -355,7 +356,21 @@
 			"name": "listar CONTACTO",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://newback-sr47.onrender.com/api/contactos-emergencia/1",
+					"protocol": "https",
+					"host": [
+						"newback-sr47",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"contactos-emergencia",
+						"1"
+					]
+				}
 			},
 			"response": []
 		}
