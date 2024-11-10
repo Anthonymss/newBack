@@ -8,6 +8,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Builder
 public class ContactoEmergencia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,6 +16,7 @@ public class ContactoEmergencia {
     private String nombre;
     private String telefono;
     @ManyToOne
-    private Usuario usuario; // Relación opcional
+    @JoinColumn(name = "usuario_id")  // Define la columna de clave foránea en ContactoEmergencia
+    private Usuario usuario;
     private String tipo;
 }

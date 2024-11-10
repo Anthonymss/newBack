@@ -24,6 +24,6 @@ public class Usuario {
     private String direccion;
     @ManyToOne
     private GrupoVecinos grupoVecinos;
-    @OneToMany
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<ContactoEmergencia> contactosEmergencia;
 }
